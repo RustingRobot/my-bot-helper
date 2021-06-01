@@ -20,4 +20,4 @@ for filename in os.listdir("./cogs"):   #load all cogs in the cogs folder
         client.load_extension(f"cogs.{filename[:-3]}")
 
 load_dotenv()
-client.run(os.getenv('DISCORD_TOKEN'))
+client.run(os.environ.get("DISCORD_TOKEN"))
