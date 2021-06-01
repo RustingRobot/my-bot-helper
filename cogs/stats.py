@@ -16,6 +16,21 @@ class Stats(commands.Cog):
     async def on_ready(self):
         print("Stats comments cog online!")
 
+    @commands.Cog.listener()
+    async def on_message(self, msg):
+        if 'https://scratch.mit.edu/projects/' in msg.content:
+            start = msg.content.index("https://scratch.mit.edu/projects/") + 33
+            if(start >= len(msg.content) or not msg.content[start].isnumeric()):
+                return
+            end = start
+            while msg.content[end].isnumeric():
+                end += 1
+                if end == len(msg.content):
+                    break
+            embed=discord.Embed(color=0x93ccea)
+            embed.set_author(name="TurboWarp link", url=f"https://turbowarp.org/{msg.content[start:end]}/embed", icon_url=f"https://cdn2.scratch.mit.edu/get_image/project/{msg.content[start:end]}_480x360.png")
+            await msg.channel.send(embed = embed)
+
     @commands.command()
     async def comment(self, ctx):
         response = requests.get("https://api.scratch.mit.edu/proxy/featured")
