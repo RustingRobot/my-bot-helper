@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 
 import os
-from dotenv import load_dotenv
 
 # -- invite --
 #https://discord.com/api/oauth2/authorize?client_id=713774249235710002&permissions=51264&scope=bot
