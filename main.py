@@ -3,10 +3,6 @@ from discord.ext import commands
 
 import os
 
-# -- invite --
-#https://discord.com/api/oauth2/authorize?client_id=713774249235710002&permissions=51264&scope=bot
-# --        --
-
 client = commands.Bot(command_prefix = ";")
 
 @client.event
