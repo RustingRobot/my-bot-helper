@@ -27,7 +27,7 @@ class Stats(commands.Cog):
                 end += 1
                 if end == len(msg.content):
                     break
-            embed=discord.Embed(color=0x93ccea)
+            embed=discord.Embed(color=0x007ffc)
             embed.set_author(name="TurboWarp link", url=f"https://turbowarp.org/{msg.content[start:end]}/embed", icon_url=f"https://cdn2.scratch.mit.edu/get_image/project/{msg.content[start:end]}_480x360.png")
             await msg.channel.send(embed = embed)
 
