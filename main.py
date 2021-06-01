@@ -18,5 +18,4 @@ for filename in os.listdir("./cogs"):   #load all cogs in the cogs folder
     if filename.endswith(".py"):
         client.load_extension(f"cogs.{filename[:-3]}")
 
-load_dotenv()
 client.run(os.environ.get("DISCORD_TOKEN"))
